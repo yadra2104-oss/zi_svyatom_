@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>З Днем народження, Андрію Миколайовичу! 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Rubik:ital,wght@0,400;0,500;0,700;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0057B7; --blue-deep:#003d82; --blue-dark:#002b5e;
+  --yellow:#FFD500; --yellow-soft:#ffe873;
+  --cream:#FFF9EC; --paper:#fffdf6;
+  --ink:#17233f; --red:#e5484d; --green:#2f9e44;
+  --vysh:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='20' viewBox='0 0 48 20'%3E%3Crect width='48' height='20' fill='%23fffdf6'/%3E%3Cpath d='M12 2 L20 10 L12 18 L4 10 Z' fill='%230057B7'/%3E%3Cpath d='M36 2 L44 10 L36 18 L28 10 Z' fill='%23E5484D'/%3E%3Ccircle cx='12' cy='10' r='2.4' fill='%23FFD500'/%3E%3Ccircle cx='36' cy='10' r='2.4' fill='%23FFD500'/%3E%3C/svg%3E");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Rubik',sans-serif;color:var(--ink);background:var(--cream);
+  background-image:radial-gradient(rgba(0,87,183,.055) 1.2px,transparent 1.2px);
+  background-size:22px 22px;overflow-x:hidden;
+}
+body::after{ /* noise grain */
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+::selection{background:var(--yellow);color:var(--ink)}
+img{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:999}
+.vysh-band{height:22px;background:var(--vysh) repeat-x center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;font-family:'Unbounded',sans-serif;
+  font-weight:700;font-size:.95rem;padding:.9rem 1.6rem;border:2.5px solid var(--ink);
+  border-radius:14px;background:var(--yellow);color:var(--ink);
+  box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s;
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-white{background:#fff}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:2.4rem 5vw 4rem;overflow:hidden}
+.hero-glow{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(90px);opacity:.28;pointer-events:none}
+.g1{background:var(--yellow);top:-160px;left:-140px}
+.g2{background:var(--blue);top:80px;right:-180px;opacity:.18}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;max-width:1200px;margin:0 auto;align-items:start}
+.eyebrow{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--blue);background:#fff;border:2px solid var(--blue);border-radius:999px;padding:.45rem 1rem;margin-bottom:1.4rem;
+}
+.hero h1{font-family:'Unbounded',sans-serif;line-height:1.05}
+.h1-top{display:block;font-weight:500;font-size:clamp(1.1rem,2.4vw,1.7rem);color:var(--ink);margin-bottom:.4rem}
+.h1-name{
+  display:inline-block;font-weight:900;font-size:clamp(1.9rem,5.4vw,3.7rem);letter-spacing:.01em;
+  color:var(--blue-deep);transform:rotate(-1.2deg);
+  background:linear-gradient(180deg,transparent 58%,var(--yellow) 58%);padding:0 .18em;
+}
+.hero-sub{margin:1.2rem 0 1.8rem;font-size:1.08rem;max-width:34rem;line-height:1.6}
+.hero-sub b{color:var(--blue)}
+
+.ecg{width:100%;max-width:520px;height:56px;margin-bottom:1rem}
+.ecg path{fill:none;stroke:var(--blue);stroke-width:2.5;stroke-linecap:round;
+  stroke-dasharray:100;stroke-dashoffset:100;animation:ecg 5.5s linear infinite}
+@keyframes ecg{0%{stroke-dashoffset:100}55%{stroke-dashoffset:0}100%{stroke-dashoffset:-100}}
+
+/* cake */
+.cake-zone{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;margin-top:.6rem}
+.cake{position:relative;width:300px;height:280px}
+.plate{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:300px;height:24px;background:#fff;border:2px solid var(--ink);border-radius:50%}
+.layer{position:absolute;left:50%;transform:translateX(-50%);border:2px solid var(--ink);border-radius:12px 12px 8px 8px}
+.layer::before{content:'';position:absolute;top:-2px;left:0;right:0;height:16px;
+  background:radial-gradient(circle at 9px -3px,var(--cream) 9px,transparent 10px);background-size:24px 16px}
+.l-bot{bottom:16px;width:252px;height:76px;background:repeating-linear-gradient(45deg,var(--blue) 0 14px,#2f7fd0 14px 28px)}
+.l-mid{bottom:88px;width:206px;height:64px;background:repeating-linear-gradient(45deg,var(--yellow) 0 14px,#ffe24d 14px 28px)}
+.l-top{bottom:148px;width:162px;height:58px;background:var(--cream);display:flex;align-items:center;justify-content:center}
+.l-top::after{content:'';position:absolute;left:8px;right:8px;bottom:8px;height:10px;background:var(--vysh) repeat-x center;background-size:auto 10px;border-radius:4px}
+.l-top b{font-family:'Unbounded',sans-serif;font-weight:900;color:var(--blue);font-size:1.05rem;letter-spacing:.04em}
+.candles{position:absolute;bottom:204px;left:50%;transform:translateX(-50%);width:170px;display:flex;justify-content:space-between;align-items:flex-end}
+.candle{position:relative;width:10px;height:34px;border-radius:3px;border:1.5px solid rgba(23,35,63,.5);
+  background:repeating-linear-gradient(-45deg,#fff 0 5px,var(--red) 5px 10px)}
+.candle:nth-child(2),.candle:nth-child(4){height:40px}
+.candle:nth-child(3){height:46px}
+.flame{position:absolute;top:-19px;left:50%;width:14px;height:20px;transform:translateX(-50%);
+  background:radial-gradient(circle at 50% 72%,#fff 0 16%,var(--yellow) 45%,#ff9f1a 78%,#ff5e00);
+  border-radius:50% 50% 45% 45%/62% 62% 38% 38%;
+  box-shadow:0 0 16px 5px rgba(255,180,0,.55);
+  animation:flick .45s ease-in-out infinite alternate;transform-origin:bottom center}
+.candle:nth-child(2n) .flame{animation-delay:.2s}
+@keyframes flick{from{transform:translateX(-50%) scale(1) rotate(-3deg)}to{transform:translateX(-50%) scale(.92,1.08) rotate(3deg)}}
+.smoke{position:absolute;top:-26px;left:50%;width:10px;height:10px;border-radius:50%;background:rgba(140,150,170,.55);
+  filter:blur(3px);opacity:0;transform:translateX(-50%)}
+.cake.blown .flame{transform:translateX(-50%) scale(0);opacity:0;transition:.3s}
+.cake.blown .candle:nth-child(1) .flame{transition-delay:.0s}.cake.blown .candle:nth-child(2) .flame{transition-delay:.08s}
+.cake.blown .candle:nth-child(3) .flame{transition-delay:.16s}.cake.blown .candle:nth-child(4) .flame{transition-delay:.24s}
+.cake.blown .candle:nth-child(5) .flame{transition-delay:.32s}
+.cake.blown .smoke{animation:smoke 1.7s ease-out forwards}
+.cake.blown .candle:nth-child(2) .smoke{animation-delay:.1s}.cake.blown .candle:nth-child(3) .smoke{animation-delay:.2s}
+.cake.blown .candle:nth-child(4) .smoke{animation-delay:.3s}.cake.blown .candle:nth-child(5) .smoke{animation-delay:.4s}
+@keyframes smoke{0%{opacity:.8;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-50%,-52px) scale(2.6)}}
+.cake-note{font-size:.85rem;color:#5a6a84;font-style:italic}
+
+/* наказ */
+.hero-side{position:relative;padding-top:1rem}
+.prikaz{
+  position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:6px;
+  padding:1.8rem 1.6rem 1.4rem;box-shadow:8px 8px 0 rgba(0,87,183,.25);transform:rotate(2deg);
+  font-size:.92rem;line-height:1.55;max-width:26rem;
+}
+.prikaz h3{font-family:'Unbounded',sans-serif;font-size:.95rem;letter-spacing:.06em;margin-bottom:.7rem;color:var(--blue-deep)}
+.prikaz ol{margin:.5rem 0 .8rem 1.2rem}
+.prikaz li{margin-bottom:.3rem}
+.prikaz .sign{font-family:'Caveat',cursive;font-size:1.4rem;color:var(--blue);transform:rotate(-2deg);display:inline-block}
+.stamp{
+  position:absolute;right:-18px;bottom:-20px;width:96px;height:96px;border:3px double var(--red);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:var(--red);
+  font-family:'Unbounded',sans-serif;font-weight:700;font-size:.62rem;line-height:1.25;
+  transform:rotate(-12deg);background:rgba(255,253,246,.85);padding:.6rem;
+}
+.polaroid{
+  margin:2.2rem auto 0;width:min(240px,80%);background:#fff;border:2px solid var(--ink);
+  padding:.6rem .6rem 1rem;transform:rotate(-4deg);box-shadow:6px 8px 0 rgba(23,35,63,.15);transition:transform .3s;
+}
+.polaroid:hover{transform:rotate(0deg) translateY(-6px)}
+.polaroid .ph{overflow:hidden;border:1px solid #ddd}
+.polaroid img{animation:kb 14s ease-in-out infinite alternate}
+.polaroid figcaption{font-family:'Caveat',cursive;font-size:1.25rem;text-align:center;margin-top:.5rem;color:var(--blue-deep)}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(2%, -2%)}}
+.tape{position:absolute;top:-12px;left:50%;transform:translateX(-50%) rotate(-3deg);width:90px;height:26px;background:rgba(255,213,0,.8);border:1px dashed rgba(23,35,63,.35)}
+
+.balloon{position:absolute;font-size:2.2rem;opacity:.85;animation:floaty 6s ease-in-out infinite;pointer-events:none;user-select:none}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-22px) rotate(5deg)}}
+
+/* ---------- ticker ---------- */
+.ticker{background:var(--yellow);border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);overflow:hidden;padding:.7rem 0}
+.ticker-track{display:flex;width:max-content;animation:ticker 26s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-group{display:flex;gap:2.6rem;padding-right:2.6rem;font-family:'Unbounded',sans-serif;font-weight:700;font-size:.85rem;white-space:nowrap;color:var(--blue-deep)}
+@keyframes ticker{to{transform:translateX(-50%)}}
+
+/* ---------- sections ---------- */
+section{padding:4.5rem 5vw}
+.wrap{max-width:1160px;margin:0 auto}
+.sec-head{max-width:46rem;margin-bottom:2.6rem}
+.sec-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red)}
+.sec-head h2{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.6rem,3.4vw,2.5rem);margin:.5rem 0 .8rem;line-height:1.15}
+.hl{background:linear-gradient(180deg,transparent 58%,var(--yellow) 58%);padding:0 .12em}
+.hl-blue{background:linear-gradient(180deg,transparent 58%,rgba(0,87,183,.28) 58%);padding:0 .12em}
+.sec-sub{color:#4c5a76;line-height:1.6}
+.alt{background:#fff;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+
+/* ---------- recipes ---------- */
+.rx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.6rem}
+.rx{
+  position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:10px;
+  padding:1.5rem 1.4rem 1.2rem;box-shadow:6px 6px 0 rgba(0,87,183,.2);
+  transition:transform .25s,box-shadow .25s;transform:rotate(var(--r,0deg));
+}
+.rx:nth-child(odd){--r:-1deg}.rx:nth-child(even){--r:1.2deg}
+.rx:hover{transform:rotate(0) translateY(-8px);box-shadow:10px 12px 0 rgba(0,87,183,.3)}
+.rx .sym{font-size:2.2rem;color:var(--red);font-family:Georgia,serif;line-height:1}
+.rx h4{font-family:'Unbounded',sans-serif;font-size:.85rem;margin:.4rem 0 .6rem;color:var(--blue-deep);letter-spacing:.05em}
+.rx p{font-size:.93rem;line-height:1.55}
+.rx .dose{display:inline-block;margin-top:.8rem;font-size:.75rem;font-weight:700;color:var(--blue);border:1.5px dashed var(--blue);border-radius:999px;padding:.25rem .7rem}
+.rx .approved{position:absolute;top:10px;right:12px;font-size:.55rem;font-weight:700;color:var(--red);border:2px solid var(--red);border-radius:50%;width:65px;height:65px;display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(12deg);line-height:1.2;opacity:.85}
+
+/* ---------- anatomy ---------- */
+.anat-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.body-box{background:linear-gradient(160deg,#eaf2ff,#fdf6dd);border:2px solid var(--ink);border-radius:18px;padding:1.5rem;box-shadow:8px 8px 0 var(--yellow)}
+.body-svg{width:100%;max-width:340px;display:block;margin:0 auto}
+.sil{fill:#dfe9fb;stroke:var(--blue);stroke-width:2.5;stroke-linejoin:round}
+.organ{cursor:pointer;transition:filter .2s;outline:none}
+.organ:hover,.organ:focus-visible,.organ.active{filter:drop-shadow(0 0 7px rgba(255,200,0,.95))}
+.beat{animation:beat 1s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.1)}24%{transform:scale(1)}}
+.organ-panel{
+  background:#fff;border:2px solid var(--ink);border-left:10px solid var(--yellow);
+  border-radius:12px;padding:1.8rem;box-shadow:6px 6px 0 rgba(0,87,183,.18);min-height:230px;
+}
+.organ-panel.pop{animation:panelPop .45s ease}
+@keyframes panelPop{0%{transform:translateY(10px) scale(.98);opacity:.4}100%{transform:none;opacity:1}}
+.op-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem}
+.op-head span{font-size:2rem}
+.op-head h3{font-family:'Unbounded',sans-serif;font-size:1.15rem;color:var(--blue-deep)}
+.organ-panel p{line-height:1.65;font-size:1rem}
+.anat-hint{margin-top:1rem;font-size:.85rem;color:#5a6a84;font-style:italic}
+
+/* ---------- generator ---------- */
+.gen-card{
+  max-width:760px;margin:0 auto;background:var(--paper);border:2.5px solid var(--ink);border-radius:16px;
+  padding:2.2rem;box-shadow:10px 10px 0 rgba(229,72,77,.25);text-align:center;position:relative;
+}
+.gen-card::before{content:'ГЕНЕРАТОР ПРИВІТАНЬ 3000™';position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-1.5deg);
+  background:var(--red);color:#fff;font-family:'Unbounded',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.12em;padding:.4rem 1rem;border-radius:8px;border:2px solid var(--ink);white-space:nowrap}
+.gen-out{min-height:110px;display:flex;align-items:center;justify-content:center;font-size:1.22rem;line-height:1.6;font-weight:500;padding:.5rem 0 1.4rem}
+.caret{display:inline-block;width:3px;height:1.2em;background:var(--blue);margin-left:3px;animation:blink .8s steps(2) infinite;vertical-align:-3px}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- stats ---------- */
+.stats{background:var(--blue-deep);color:#fff;border-top:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);
+  background-image:radial-gradient(rgba(255,213,0,.08) 1.5px,transparent 1.5px);background-size:26px 26px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.6rem}
+.stat{border:2px solid var(--yellow);border-radius:14px;padding:1.6rem 1.4rem;text-align:center;background:rgba(255,255,255,.05);transition:transform .25s}
+.stat:hover{transform:translateY(-6px)}
+.stat .num{font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,2.9rem);color:var(--yellow);display:block}
+.stat .lbl{margin-top:.5rem;font-size:.9rem;line-height:1.45;opacity:.92}
+
+/* ---------- postcards ---------- */
+.cards-zone{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;padding-top:1rem}
+.postcard{
+  position:relative;width:min(300px,100%);background:#fff;border:2px solid var(--ink);border-radius:6px;
+  padding:1rem 1.1rem 1.1rem;box-shadow:7px 8px 0 rgba(23,35,63,.14);
+  transform:rotate(var(--r));transition:transform .3s,box-shadow .3s;
+}
+.postcard:nth-child(1){--r:-3.5deg}
+.postcard:nth-child(2){--r:2.5deg;margin-top:2rem}
+.postcard:nth-child(3){--r:-1.5deg}
+.postcard:nth-child(4){--r:3deg;margin-top:1.4rem}
+.postcard:nth-child(5){--r:-2.8deg}
+.postcard:nth-child(6){--r:1.8deg;margin-top:2.4rem}
+.postcard:nth-child(7){--r:-2deg;margin-top:1rem}
+.postcard:hover{transform:rotate(0) translateY(-10px);box-shadow:12px 16px 0 rgba(0,87,183,.22);z-index:2}
+.postcard .tape{width:76px;height:22px}
+.postcard .ph{overflow:hidden;border:1.5px solid var(--ink);margin-bottom:.8rem}
+.postcard .ph img{width:100%;height:150px;object-fit:cover;animation:kb 16s ease-in-out infinite alternate}
+.postcard p{font-family:'Caveat',cursive;font-size:1.35rem;line-height:1.35;color:#243352}
+.postcard .from{margin-top:.7rem;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+
+/* ---------- quiz ---------- */
+.quiz-card{max-width:700px;margin:0 auto;background:#fff;border:2.5px solid var(--ink);border-radius:16px;padding:2rem;box-shadow:8px 8px 0 var(--yellow)}
+.quiz-head{display:flex;justify-content:space-between;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:1.1rem}
+.quiz-card h3{font-family:'Unbounded',sans-serif;font-size:1.1rem;line-height:1.4;margin-bottom:1.3rem}
+.q-answers{display:grid;gap:.7rem}
+.q-answers button{
+  text-align:left;padding:.85rem 1.1rem;border:2px solid var(--ink);border-radius:10px;background:var(--cream);
+  font-size:.95rem;font-weight:500;transition:transform .15s,background .2s;
+}
+.q-answers button:hover:not(:disabled){transform:translateX(6px);background:var(--yellow-soft)}
+.q-answers button.correct{background:#c8f0cf;border-color:var(--green)}
+.q-answers button.wrong{background:#ffd9da;border-color:var(--red)}
+.q-explain{margin-top:1.1rem;background:#eef4ff;border-left:6px solid var(--blue);border-radius:8px;padding:.9rem 1.1rem;font-size:.92rem;line-height:1.55}
+.q-next{margin-top:1.2rem}
+.q-result{text-align:center;padding:1rem 0}
+.q-result .score{font-family:'Unbounded',sans-serif;font-weight:900;font-size:2.6rem;color:var(--blue)}
+.q-result p{margin:.8rem 0 1.4rem;line-height:1.6}
+
+/* ---------- finale ---------- */
+.finale{background:var(--blue-dark);color:#fff;text-align:center;position:relative;overflow:hidden;
+  background-image:radial-gradient(rgba(255,213,0,.07) 1.5px,transparent 1.5px);background-size:26px 26px}
+.finale .sec-eyebrow{color:var(--yellow)}
+.finale h2{color:#fff;font-family:'Unbounded',sans-serif;font-weight:900;font-size:clamp(1.6rem,3.4vw,2.4rem);margin-bottom:.8rem}
+.finale .sec-sub{color:rgba(255,255,255,.75)}
+.heart-btn{
+  margin:2.2rem auto 1rem;display:block;background:var(--red);color:#fff;border:3px solid #fff;border-radius:24px;
+  font-family:'Unbounded',sans-serif;font-weight:700;font-size:1.05rem;padding:1.1rem 2rem;
+  box-shadow:0 0 0 6px rgba(229,72,77,.25);transition:transform .12s;
+}
+.heart-btn:active{transform:scale(.94)}
+.heart-btn.pop{animation:heartPop .35s ease}
+@keyframes heartPop{40%{transform:scale(1.12)}}
+.love-counter{font-family:'Unbounded',sans-serif;font-weight:900;font-size:2rem;color:var(--yellow)}
+.love-note{min-height:1.6rem;margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.85);font-style:italic}
+.song-card{max-width:620px;margin:3rem auto 0;background:rgba(255,255,255,.06);border:2px solid var(--yellow);border-radius:16px;padding:1.8rem}
+.song-card h3{font-family:'Unbounded',sans-serif;font-size:1rem;color:var(--yellow);margin-bottom:1.2rem;letter-spacing:.08em}
+.lyrics{display:grid;gap:.4rem;margin-bottom:1.4rem}
+.lyric{font-size:1.05rem;color:rgba(255,255,255,.4);transition:color .25s,transform .25s}
+.lyric.on{color:var(--yellow);transform:scale(1.06);font-weight:700}
+.signature{margin-top:3.2rem;font-family:'Caveat',cursive;font-size:clamp(1.7rem,3.4vw,2.5rem);color:var(--yellow);transform:rotate(-2deg);display:inline-block}
+.finale small{display:block;margin-top:1rem;color:rgba(255,255,255,.55)}
+
+footer{background:var(--cream);text-align:center;padding:1.4rem 5vw;font-size:.85rem;color:#5a6a84}
+
+/* toast */
+#toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);z-index:1000;
+  background:var(--ink);color:#fff;border:2px solid var(--yellow);border-radius:999px;
+  padding:.8rem 1.5rem;font-weight:600;font-size:.95rem;box-shadow:0 8px 24px rgba(0,0,0,.25);
+  transition:transform .4s cubic-bezier(.2,1.4,.4,1);max-width:90vw;text-align:center;
+}
+#toast.show{transform:translate(-50%,0)}
+
+/* ---------- responsive ---------- */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-side{max-width:26rem;margin:0 auto}
+  .anat-grid{grid-template-columns:1fr}
+}
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .ticker-track{animation:none;flex-wrap:wrap}
+  .flame{animation:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+<div id="toast" role="status"></div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-glow g1"></div><div class="hero-glow g2"></div>
+  <span class="balloon" style="top:8%;left:46%" aria-hidden="true">🎈</span>
+  <span class="balloon" style="top:16%;right:6%;animation-delay:1.4s" aria-hidden="true">🎈</span>
+  <span class="balloon" style="bottom:12%;left:3%;animation-delay:.7s;font-size:1.8rem" aria-hidden="true">🌻</span>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <span class="eyebrow">Медичний коледж • Біологія та анатомія • Особливий день</span>
+      <h1>
+        <span class="h1-top">З Днем народження,</span>
+        <span class="h1-name" id="scrambleName">Андрію Миколайовичу!</span>
+      </h1>
+      <p class="hero-sub">Викладачу, який точно знає, де в людини душа <b>(приблизно між третім і четвертим ребром)</b>, і вміє пояснити це так, що запам'ятає вся група. Найкращі побажання — від усього колективу коледжу та студентів! 💙💛</p>
+
+      <svg class="ecg" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
+        <path pathLength="100" d="M0 50 h90 l10 -24 l14 48 l12 -36 l10 12 h164 h90 l10 -24 l14 48 l12 -36 l10 12 h164 h90 l10 -24 l14 48 l12 -36 l10 12 h164 h90 l10 -24 l14 48 l12 -36 l10 12 h64"/>
+      </svg>
+
+      <div class="cake-zone">
+        <div class="cake" id="cake" aria-label="Святковий торт зі свічками">
+          <div class="candles" aria-hidden="true">
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          </div>
+          <div class="layer l-top"><b>З ДН!</b></div>
+          <div class="layer l-mid"></div>
+          <div class="layer l-bot"></div>
+          <div class="plate"></div>
+        </div>
+        <button class="btn" id="blowBtn" type="button">💨 Задути свічки!</button>
+        <p class="cake-note">Свічок рівно п'ять — як ідеальних пар на тиждень 😉</p>
+      </div>
+    </div>
+
+    <div class="hero-side">
+      <article class="prikaz reveal">
+        <span class="tape" aria-hidden="true"></span>
+        <h3>НАКАЗ № 01/СВЯТО</h3>
+        <p>по медичному коледжу «Про відзначення Дня народження Андрія Миколайовича»</p>
+        <p style="margin-top:.6rem"><b>НАКАЗУЮ:</b></p>
+        <ol>
+          <li>Святкувати з максимальним запасом АТФ.</li>
+          <li>Усмішку визнати обов'язковим безумовним рефлексом.</li>
+          <li>Торт вимірювати не в грамах, а в ендорфінах.</li>
+          <li>Студентам — бути найкращими (сьогодні особливо).</li>
+        </ol>
+        <span class="sign">Святковий комітет коледжу 💛💙</span>
+        <span class="stamp">ДО ВИКОНАННЯ 🎉</span>
+      </article>
+      <figure class="polaroid reveal">
+        <div class="ph"><img src="https://picsum.photos/seed/ukraine-sunflower-field/440/300" alt="Соняшникове поле"></div>
+        <figcaption>Настрій коледжу сьогодні 🌻</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<!-- ================= TICKER ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-group">
+      <span>🎂 З Днем народження, Андрію Миколайовичу!</span><span>🧬 Біологія — це життя</span><span>🫀 Пульс свята — 120 уд/хв</span><span>🔬 Анатомія щастя науково доведена</span><span>💉 Доза радості — без обмежень</span><span>🌻 Соняшного настрою!</span><span>🦴 Кістки аплодують стоячи</span>
+    </div>
+    <div class="ticker-group">
+      <span>🎂 З Днем народження, Андрію Миколайовичу!</span><span>🧬 Біологія — це життя</span><span>🫀 Пульс свята — 120 уд/хв</span><span>🔬 Анатомія щастя науково доведена</span><span>💉 Доза радості — без обмежень</span><span>🌻 Соняшного настрою!</span><span>🦴 Кістки аплодують стоячи</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= РЕЦЕПТИ ================= -->
+<section id="rx">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">✦ Розділ 01 ✦</span>
+      <h2>Аптечка <span class="hl">святкових</span> побажань</h2>
+      <p class="sec-sub">Виписані особисто студентами. Відпускаються без рецепта. Передозування неможливе.</p>
+    </div>
+    <div class="rx-grid">
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Смійху 200 мг</h4><p>Приймати щоранку натщесерце. Побічні ефекти: зморшки від усмішок та надмірна популярність серед студентів.</p><span class="dose">💊 Курс: все життя</span></article>
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Успіху 1 таб. × 3 рази</h4><p>Перед кожною парою. Запивати міцною кавою. При регулярному прийманні ефект накопичується до премії.</p><span class="dose">☕ Запивати кавою</span></article>
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Натхнення 5 мл в/в</h4><p>Крапельно, під час перевірки конспектів. Особливо коли хтось знову намалював серце у формі картоплі.</p><span class="dose">💧 Крапельно</span></article>
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Відпустки 14 днів</h4><p>Профілактично, двічі на рік. Поєднувати з морем, книжками та повною відсутністю питань у чаті групи.</p><span class="dose">🏖️ Профілактично</span></article>
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Премії 5000 од.</h4><p>При перших симптомах втоми. Курс не обмежений. Дозування з кожним роком можна збільшувати.</p><span class="dose">💰 Без обмежень</span></article>
+      <article class="rx reveal"><span class="approved">ЗАТВЕРДЖЕНО КОЛЕДЖЕМ</span><div class="sym">℞</div><h4>Любові студентів</h4><p>Безлімітно. Зберігати у великому серці. Термін придатності — вічний. Відпускається без рецепта.</p><span class="dose">💙💛 Назавжди</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= АНАТОМІЯ ================= -->
+<section id="anatomy" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">✦ Розділ 02 ✦</span>
+      <h2>Анатомія свята: <span class="hl-blue">інтерактивна схема</span></h2>
+      <p class="sec-sub">Як справжній знавець будови людини, ви точно знаєте всі ці органи. А вони приготували для вас побажання — торкніться кожного!</p>
+    </div>
+    <div class="anat-grid">
+      <div class="body-box reveal">
+        <svg class="body-svg" viewBox="0 0 240 430" role="img" aria-label="Схема тіла людини з активними органами">
+          <ellipse cx="120" cy="416" rx="80" ry="8" fill="rgba(0,87,183,.1)"/>
+          <circle class="sil" cx="120" cy="52" r="36"/>
+          <rect class="sil" x="106" y="84" width="28" height="18"/>
+          <path class="sil" d="M120 98 c-30 0 -50 14 -54 40 l-6 62 c-2 14 16 16 18 4 l6 -44 v150 c0 12 14 12 14 0 v-78 h44 v78 c0 12 14 12 14 0 V160 l6 44 c2 12 20 10 18 -4 l-6 -62 c-4 -26 -24 -40 -54 -40 z"/>
+          <g class="organ" data-key="brain" tabindex="0" role="button" aria-label="Мозок — побажання">
+            <ellipse cx="120" cy="46" rx="24" ry="17" fill="#f28cb1" stroke="#c94f7c" stroke-width="2"/>
+            <path d="M104 44 q6 -8 12 0 q6 -8 12 0 M106 52 q7 6 14 0 q7 6 14 0" fill="none" stroke="#c94f7c" stroke-width="1.6" stroke-linecap="round"/>
+          </g>
+          <g class="organ" data-key="lungs" tabindex="0" role="button" aria-label="Легені — побажання">
+            <ellipse cx="93" cy="192" rx="16" ry="33" fill="#8fc1ff" stroke="#4a90d9" stroke-width="2" transform="rotate(-9 93 192)"/>
+            <ellipse cx="147" cy="192" rx="16" ry="33" fill="#8fc1ff" stroke="#4a90d9" stroke-width="2" transform="rotate(9 147 192)"/>
+            <path d="M120 152 v20 M120 164 l-14 14 M120 164 l14 14" fill="none" stroke="#4a90d9" stroke-width="2.4" stroke-linecap="round"/>
+          </g>
+          <g class="organ" data-key="heart" tabindex="0" role="button" aria-label="Серце — побажання">
+            <g class="beat"><path transform="translate(113 182) scale(1.05)" d="M0 -8 C -5 -20 -24 -18 -24 -4 C -24 8 -10 16 0 26 C 10 16 24 8 24 -4 C 24 -18 5 -20 0 -8 Z" fill="#e5484d" stroke="#a8272c" stroke-width="2"/></g>
+          </g>
+          <g class="organ" data-key="stomach" tabindex="0" role="button" aria-label="Шлунок — побажання">
+            <path d="M132 244 c20 -4 30 8 26 24 c-4 15 -22 20 -34 12 c-6 -4 -6 -12 0 -14 c9 -3 14 -8 8 -22 z" fill="#ffb142" stroke="#d98a1f" stroke-width="2"/>
+          </g>
+          <g class="organ" data-key="liver" tabindex="0" role="button" aria-label="Печінка — побажання">
+            <path d="M70 246 q24 -8 40 4 q6 10 -6 18 q-20 10 -36 -2 q-8 -12 2 -20 z" fill="#b25445" stroke="#8a3a2e" stroke-width="2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="reveal">
+        <div class="organ-panel" id="organPanel" aria-live="polite">
+          <div class="op-head"><span id="opIcon">🩺</span><h3 id="opTitle">Оберіть орган</h3></div>
+          <p id="opText">Торкніться мозку, серця, легень, шлунка чи печінки на схемі — кожен приготував особисте побажання для Андрія Миколайовича!</p>
+        </div>
+        <p class="anat-hint">* Схему перевірено відділом контролю якості свята. Серце — найважливіший орган сьогодні. 💛</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ГЕНЕРАТОР ================= -->
+<section id="generator">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="sec-eyebrow">✦ Розділ 03 ✦</span>
+      <h2>Генератор <span class="hl">прикольних</span> привітань</h2>
+      <p class="sec-sub">Секретна розробка викладачів коледжу. Тисніть кнопку — отримайте дозу біологічного компліменту.</p>
+    </div>
+    <div class="gen-card reveal">
+      <div class="gen-out"><span id="genOut">Тисніть кнопку нижче — і привітання синтезується! 🧪</span><span class="caret" aria-hidden="true"></span></div>
+      <button class="btn btn-blue" id="genBtn" type="button">🎲 Випадкове привітання</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= СТАТИСТИКА ================= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:100%;text-align:center">
+      <span class="sec-eyebrow" style="color:var(--yellow)">✦ Святкова статистика ✦</span>
+      <h2 style="color:#fff">Андрій Миколайович <span style="color:var(--yellow)">у цифрах</span></h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat reveal"><span class="num" data-count="20">0</span><span class="lbl">років у полоні біології — і жодного бажання звільнитися</span></div>
+      <div class="stat reveal"><span class="num" data-count="1500" data-suffix="+">0</span><span class="lbl">студентів тепер точно знають, де селезінка</span></div>
+      <div class="stat reveal"><span class="num" data-count="365">0</span><span class="lbl">літрів кави на навчальний рік (перевірено лабораторно)</span></div>
+      <div class="stat reveal"><span class="num" data-count="999" data-suffix=" ∞">0</span><span class="lbl">мітохондрій святкової енергії на сьогодні</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ЛИСТІВКИ ================= -->
+<section id="cards">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">✦ Розділ 04 ✦</span>
+      <h2>Листівки від <span class="hl">улюблених груп</span></h2>
+      <p class="sec-sub">Писали всім коледжем, хвилювалися, як перед заліком. Навіть старости.</p>
+    </div>
+    <div class="cards-zone">
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <p>Андрію Миколайовичу! Завдяки вам ми нарешті знаємо, де права нирка, а де ліва. Для нашої групи це справжній прорив! 🎉</p>
+        <span class="from">— Група 1МЛ</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <div class="ph"><img src="https://picsum.photos/seed/microscope-biology-lab/440/300" alt="Лабораторія з мікроскопом"></div>
+        <p>Ви пояснюєте анатомію так, що навіть кістки скелету аплодували б стоячи! 🦴</p>
+        <span class="from">— Група 2Ла</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <p>Єдиний викладач, від чиїх пар серце б'ється частіше. Від цікавості, чесно-чесно! 💓</p>
+        <span class="from">— Група 2Лб</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <div class="ph"><img src="https://picsum.photos/seed/anatomy-study-notes/440/300" alt="Конспекти з анатомії"></div>
+        <p>Дякуємо, що не ставите «два», коли ми плутаємо мітоз і мейоз. Ви — легенда! 🧬</p>
+        <span class="from">— Група 3Ла</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <p>З Днем народження! Урочисто обіцяємо здати всі хвости до кінця тижня. Ну... майже всі. 😅</p>
+        <span class="from">— Група 3Лб</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <div class="ph"><img src="https://picsum.photos/seed/sunflower-ukraine-day/440/300" alt="Соняшники"></div>
+        <p>Найкращому знавцю клітин і тканин! Ви — ядро нашого коледжу, а ми — ваша цитоплазма. 🔬</p>
+        <span class="from">— Група 4Ла</span>
+      </article>
+      <article class="postcard reveal"><span class="tape" aria-hidden="true"></span>
+        <p>Кілька років вчимо анатомію, а досі дивуємось, як ви все це тримаєте в голові. Випускний курс вас не забуде! 🧠</p>
+        <span class="from">— Група 4Лб</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= КВІЗ ================= -->
+<section id="quiz" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="sec-eyebrow">✦ Розділ 05 ✦</span>
+      <h2>Анатомічний <span class="hl-blue">бліц-залік</span></h2>
+      <p class="sec-sub">Перевірте, чи гідні ви святкувати поруч із таким викладачем. За результати — віртуальний бал. 😏</p>
+    </div>
+    <div class="quiz-card reveal" id="quizCard">
+      <div class="quiz-head"><span id="qCount">Питання 1 / 4</span><span id="qScore">Бали: 0</span></div>
+      <h3 id="qText"></h3>
+      <div class="q-answers" id="qAnswers"></div>
+      <p class="q-explain" id="qExplain" hidden></p>
+      <button class="btn btn-blue q-next" id="qNext" type="button" hidden>Далі →</button>
+      <div class="q-result" id="qResult" hidden>
+        <div class="score" id="qFinalScore"></div>
+        <p id="qDiagnosis"></p>
+        <button class="btn" id="qRestart" type="button">🔄 Спробувати ще раз</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ФІНАЛ ================= -->
+<section class="finale" id="finale">
+  <div class="wrap">
+    <span class="sec-eyebrow">✦ Фінальний акорд ✦</span>
+    <h2>Виміряємо рівень вдячності</h2>
+    <p class="sec-sub">Кажуть, любов не виміряти. Наші коледжні науковці вважають інакше:</p>
+
+    <button class="heart-btn" id="heartBtn" type="button">🫀 Тисни на серце!</button>
+    <div class="love-counter"><span id="loveCount">0</span> ❤️</div>
+    <p class="love-note" id="loveNote">Кожне натискання — один імпульс вдячності.</p>
+
+    <div class="song-card reveal">
+      <h3>🎵 МУЗИЧНЕ ПРИВІТАННЯ ВІД КОЛЕКТИВУ</h3>
+      <div class="lyrics" id="lyrics">
+        <div class="lyric" data-line="0">З Днем народження тебя,</div>
+        <div class="lyric" data-line="1">З Днем народження тебя,</div>
+        <div class="lyric" data-line="2">З Днем народження, Андрію Миколайовичу,</div>
+        <div class="lyric" data-line="3">З Днем народження тебя! 🎉</div>
+      </div>
+      <button class="btn" id="songBtn" type="button">▶ Заспівати!</button>
+    </div>
+
+    <p class="signature reveal">З любов'ю, вдячністю та легким тремором перед заліком — ваші студенти 💙💛</p>
+    <small>Хай цей рік буде яскравішим за будь-який препарат під мікроскопом!</small>
+  </div>
+</section>
+
+<footer>
+  <div class="vysh-band" style="margin-bottom:1.2rem;border:none"></div>
+  Медичний коледж • Викладачі біології та анатомії • Зроблено з ❤️, ☕ та АТФ
+</footer>
+
+<script>
+(function(){
+"use strict";
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ---------- toast ---------- */
+const toastEl = $('#toast'); let toastTimer;
+function toast(msg){
+  toastEl.textContent = msg; toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>toastEl.classList.remove('show'), 3600);
+}
+
+/* ---------- confetti ---------- */
+const cvs = $('#confetti'), ctx = cvs.getContext('2d');
+let pieces = [], rafId = null;
+function resize(){ cvs.width = innerWidth; cvs.height = innerHeight; }
+resize(); addEventListener('resize', resize);
+const COLORS = ['#0057B7','#FFD500','#ffffff','#e5484d','#2f9e44'];
+function burst(n, x, y){
+  if(reduced) return;
+  x = x ?? innerWidth/2; y = y ?? innerHeight*0.35;
+  for(let i=0;i<n;i++){
+    pieces.push({
+      x, y, vx:(Math.random()-.5)*13, vy:Math.random()*-11-4,
+      g:.22+Math.random()*.14, rot:Math.random()*Math.PI, vr:(Math.random()-.5)*.3,
+      w:6+Math.random()*6, h:8+Math.random()*8,
+      c:COLORS[i%COLORS.length], life:200+Math.random()*90,
+      circle: Math.random()<.3
+    });
+  }
+  if(!rafId) rafId = requestAnimationFrame(tick);
+}
+function tick(){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  pieces.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy; p.vy+=p.g; p.rot+=p.vr; p.life--; p.vx*=.99;
+    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+    ctx.globalAlpha = Math.max(0, Math.min(1, p.life/60));
+    ctx.fillStyle = p.c;
+    if(p.circle){ ctx.beginPath(); ctx.arc(0,0,p.w/2,0,7); ctx.fill(); }
+    else ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+    ctx.restore();
+  });
+  pieces = pieces.filter(p=>p.life>0 && p.y < cvs.height+40);
+  if(pieces.length) rafId = requestAnimationFrame(tick);
+  else { rafId = null; ctx.clearRect(0,0,cvs.width,cvs.height); }
+}
+
+/* ---------- scramble title ---------- */
+(function(){
+  const el = $('#scrambleName'), finalText = el.textContent;
+  if(reduced) return;
+  const chars = 'АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЯ🧬💛💙';
+  const total = 28; let frame = 0;
+  const iv = setInterval(()=>{
+    frame++;
+    const prog = frame/total;
+    el.textContent = [...finalText].map((ch,i)=>
+      ch===' '||ch==='!' ? ch : (i < prog*finalText.length ? ch : chars[Math.random()*chars.length|0])
+    ).join('');
+    if(frame>=total){ el.textContent = finalText; clearInterval(iv); }
+  }, 42);
+})();
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add('in');
+    if(e.target.classList.contains('num')) countUp(e.target);
+    io.unobserve(e.target);
+  });
+},{threshold:.2});
+$$('.reveal').forEach((el,i)=>{ el.style.transitionDelay = (i%3)*0.1+'s'; io.observe(el); });
+$$('.num').forEach(el=>io.observe(el));
+
+/* ---------- count up ---------- */
+function countUp(el){
+  const target = +el.dataset.count, suffix = el.dataset.suffix || '';
+  if(reduced){ el.textContent = target + suffix; return; }
+  const dur = 1400, start = performance.now();
+  (function step(now){
+    const p = Math.min(1,(now-start)/dur), e = 1-Math.pow(1-p,3);
+    el.textContent = Math.round(target*e) + suffix;
+    if(p<1) requestAnimationFrame(step);
+  })(start);
+}
+
+/* ---------- cake ---------- */
+const cake = $('#cake'), blowBtn = $('#blowBtn'); let blown = false;
+blowBtn.addEventListener('click', ()=>{
+  blown = !blown;
+  cake.classList.toggle('blown', blown);
+  if(blown){
+    burst(180);
+    blowBtn.textContent = '🔥 Запалити знову';
+    toast('Ура! Бажання здійсниться — анатомічно гарантовано! 🎉');
+  } else {
+    blowBtn.textContent = '💨 Задути свічки!';
+    toast('Свічки знову горять — бажань можна загадати ще одне! 😉');
+  }
+});
+
+/* ---------- organ wishes ---------- */
+const wishes = {
+  brain:  {icon:'🧠', title:'Мозок',  text:'Нехай нейрони іскрять геніальними ідеями, гіпокамп зберігає лише найкращі спогади, а префронтальна кора завжди знаходить відповідь навіть на найхитріше студентське «а чому?»'},
+  heart:  {icon:'🫀', title:'Серце',  text:'Нехай міокард прокачує любов під тиском 120/80 ідеальних днів, синусовий ритм щастя ніколи не збивається, а серце б\'ється частіше лише від радості!'},
+  lungs:  {icon:'🫁', title:'Легені', text:'Дихайте на повні груди! Альвеоли нехай наповнюються морським повітрям у відпустці, а кисню вистачає на всі мрії та всі пари без винятку.'},
+  stomach:{icon:'🍰', title:'Шлунок', text:'Нехай шлунковий сік легко справляється з будь-якими проблемами, перистальтика життя рухається лише вперед, а сьогодні — смачного святкового торта без жодних калорійних докорів!'},
+  liver:  {icon:'🧪', title:'Печінка',text:'Єдиний орган, який уміє відновлюватися. Нехай і всі ваші сили відновлюються так само швидко — після будь-якого робочого дня, сесії чи педради!'}
+};
+const panel = $('#organPanel'), opIcon = $('#opIcon'), opTitle = $('#opTitle'), opText = $('#opText');
+$$('.organ').forEach(g=>{
+  const activate = ()=>{
+    $$('.organ').forEach(o=>o.classList.remove('active'));
+    g.classList.add('active');
+    const w = wishes[g.dataset.key];
+    opIcon.textContent = w.icon; opTitle.textContent = w.title; opText.textContent = w.text;
+    panel.classList.remove('pop'); void panel.offsetWidth; panel.classList.add('pop');
+  };
+  g.addEventListener('click', activate);
+  g.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); activate(); } });
+});
+
+/* ---------- greeting generator ---------- */
+const greets = [
+  'Бажаємо, щоб АТФ ніколи не закінчувався, а мітохондрії завжди працювали на ваші мрії! 🔋',
+  'Нехай серце б\'ється у синусовому ритмі щастя, а тиск піднімають лише успіхи студентів! 🫀',
+  'Рефлекторна дуга успіху: побачив конспект → усмішка → гарний настрій на весь день! 😄',
+  'Нехай ендорфіни виділяються від кожної пари, а кортизол тікає швидше за прогульника! 🏃',
+  'Міцного імунітету до смутку та стійкої резистентності до несданих заліків! 🛡️',
+  'Нехай ДНК вашого життя містить лише домінантні гени радості, успіху та премій! 🧬',
+  'Синапси нехай іскрять ідеями, гіпоталамус тримає баланс у всьому, а мозочок — рівновагу в житті! 🧠',
+  'Стабільного гомеостазу: зарплата — висока, нерви — міцні, студенти — підготовлені! ⚖️',
+  'Анатомічно доведено: ви — найкращий викладач. Факт не потребує рецензування! 🩺',
+  'З новим витком спіралі життя! Нехай цей рік буде яскравішим за препарат під мікроскопом! 🔬'
+];
+const genOut = $('#genOut'), genBtn = $('#genBtn');
+let gi = -1, twTimer;
+function typeInto(text){
+  if(reduced){ genOut.textContent = text; return; }
+  clearInterval(twTimer);
+  genOut.textContent = ''; let i = 0;
+  twTimer = setInterval(()=>{
+    genOut.textContent = text.slice(0, ++i);
+    if(i >= text.length) clearInterval(twTimer);
+  }, 26);
+}
+genBtn.addEventListener('click', ()=>{
+  let i; do { i = Math.random()*greets.length|0; } while(i === gi);
+  gi = i; typeInto(greets[i]);
+  const r = genBtn.getBoundingClientRect();
+  burst(14, r.left + r.width/2, r.top);
+});
+
+/* ---------- quiz ---------- */
+const quiz = [
+  {q:'Скільки кісток у дорослої людини?', a:['206','257','Стільки ж, скільки студентів у групі 😏'], c:0,
+   e:'206! А в новонародженого — понад 300. Природа теж любить оптимізацію.'},
+  {q:'Який орган найбільший у людини?', a:['Печінка','Шкіра','Амбіції студента перед сесією'], c:1,
+   e:'Шкіра — до 2 м²! І тут без варіантів.'},
+  {q:'Що таке дофамін?', a:['Гормон сну','Нейромедіатор задоволення й мотивації','Секретна формула старости'], c:1,
+   e:'Саме так! А виділяється він, наприклад, коли отримуєш п\'ятірку з анатомії.'},
+  {q:'Скільки разів на добу б\'ється серце?', a:['Близько 100 000 разів','5 000 разів','Лише коли бачиш хорошу людину'], c:0,
+   e:'~100 000 ударів на добу. І жодного — без причини!'}
+];
+let qi = 0, score = 0;
+const qCount=$('#qCount'), qScore=$('#qScore'), qText=$('#qText'), qAnswers=$('#qAnswers'),
+      qExplain=$('#qExplain'), qNext=$('#qNext'), qResult=$('#qResult');
+function renderQ(){
+  const item = quiz[qi];
+  qCount.textContent = `Питання ${qi+1} / ${quiz.length}`;
+  qScore.textContent = `Бали: ${score}`;
+  qText.textContent = item.q;
+  qAnswers.innerHTML = '';
+  qExplain.hidden = true; qNext.hidden = true;
+  item.a.forEach((txt, idx)=>{
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = txt;
+    b.addEventListener('click', ()=>{
+      [...qAnswers.children].forEach(x=>x.disabled = true);
+      if(idx === item.c){ b.classList.add('correct'); score++; toast('Правильно! +1 бал від Андрія Миколайовича ✅'); burst(20, innerWidth/2, innerHeight/2); }
+      else { b.classList.add('wrong'); qAnswers.children[item.c].classList.add('correct'); toast('Ой... а от на парі це було б «перевірити ще раз» 😅'); }
+      qScore.textContent = `Бали: ${score}`;
+      qExplain.textContent = '💡 ' + item.e; qExplain.hidden = false;
+      qNext.hidden = false;
+      qNext.textContent = (qi === quiz.length-1) ? 'Дізнатися діагноз 🩺' : 'Далі →';
+    });
+    qAnswers.appendChild(b);
+  });
+}
+qNext.addEventListener('click', ()=>{
+  qi++;
+  if(qi < quiz.length){ renderQ(); return; }
+  qCount.textContent = 'Залік складено!';
+  qText.textContent = ''; qAnswers.innerHTML = ''; qExplain.hidden = true; qNext.hidden = true;
+  const diag = score===4 ? '🩺 Діагноз: професор свята! Андрій Миколайович пишається вами.' :
+               score===3 ? '😎 Діагноз: майже відмінник. Один пропуск в анамнезі.' :
+               score===2 ? '🙂 Діагноз: синдром двійки, але прогноз сприятливий.' :
+                           '🚑 Діагноз: гострий дефіцит конспектів. Негайно повторити матеріал!';
+  $('#qFinalScore').textContent = `${score} / ${quiz.length}`;
+  $('#qDiagnosis').textContent = diag;
+  qResult.hidden = false;
+  if(score >= 3) burst(120);
+});
+$('#qRestart').addEventListener('click', ()=>{
+  qi = 0; score = 0; qResult.hidden = true; renderQ();
+});
+renderQ();
+
+/* ---------- love meter ---------- */
+const heartBtn = $('#heartBtn'), loveCount = $('#loveCount'), loveNote = $('#loveNote');
+let love = 0;
+const milestones = [[1,'Перший імпульс пішов! 💙'],[15,'Симпатію підтверджено клінічно 💛'],
+  [40,'Тахікардія захвату!'],[80,'Діагноз: безмежна вдячність 💙💛'],
+  [150,'ЕКГ зашкалює! Ви — офіційний фан-клуб Андрія Миколайовича! 🎉']];
+heartBtn.addEventListener('click', e=>{
+  love++;
+  loveCount.textContent = love;
+  heartBtn.classList.remove('pop'); void heartBtn.offsetWidth; heartBtn.classList.add('pop');
+  if(!reduced && love % 5 === 0) burst(8, e.clientX, e.clientY);
+  milestones.forEach(m=>{ if(love === m[0]){ loveNote.textContent = m[1]; toast(m[1]); } });
+});
+
+/* ---------- birthday song (Web Audio) ---------- */
+const songBtn = $('#songBtn');
+const F = {G4:392, A4:440, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99};
+const melody = [['G4',.375],['G4',.125],['A4',.5],['G4',.5],['C5',.5],['B4',1],
+  ['G4',.375],['G4',.125],['A4',.5],['G4',.5],['D5',.5],['C5',1],
+  ['G4',.375],['G4',.125],['G5',.5],['E5',.5],['C5',.5],['B4',.5],['A4',1],
+  ['F5',.375],['F5',.125],['E5',.5],['C5',.5],['D5',.5],['C5',1]];
+const lineStarts = [0, 3, 6, 10];
+let audioCtx = null, playing = false;
+songBtn.addEventListener('click', ()=>{
+  if(playing) return;
+  playing = true; songBtn.disabled = true; songBtn.textContent = '🎶 Грає...';
+  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+  if(audioCtx.state === 'suspended') audioCtx.resume();
+  const tempo = .55, t0 = audioCtx.currentTime + .1;
+  let t = t0;
+  melody.forEach(([n,beats])=>{
+    const dur = beats*tempo;
+    const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+    o.type = 'triangle'; o.frequency.value = F[n];
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(.25, t+.02);
+    g.gain.exponentialRampToValueAtTime(.0001, t+dur*.92);
+    o.connect(g); g.connect(audioCtx.destination);
+    o.start(t); o.stop(t+dur);
+    t += dur;
+  });
+  const totalMs = (t - t0) * 1000;
+  if(!reduced){
+    lineStarts.forEach((beats, i)=>{
+      setTimeout(()=>{
+        $$('.lyric').forEach(l=>l.classList.remove('on'));
+        document.querySelector(`.lyric[data-line="${i}"]`).classList.add('on');
+      }, beats*tempo*1000 + 100);
+    });
+  }
+  setTimeout(()=>{
+    playing = false; songBtn.disabled = false; songBtn.textContent = '▶ Заспівати ще раз!';
+    $$('.lyric').forEach(l=>l.classList.remove('on'));
+    burst(140); toast('З Днем народження, Андрію Миколайовичу! 🎶💙💛');
+  }, totalMs + 300);
+});
+})();
+</script>
+</body>
+</html>
